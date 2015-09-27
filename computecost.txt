@@ -1,0 +1,14 @@
+function J= computecost1(theta,X,y)
+m = length(y);
+%training example m is same length as the output variable y
+data = load('ex1data1.txt');
+x = data(:,1); %population of cities in 10,000
+y = data(:,2);   %profit in 10,000
+X = [ones(size(x)),x];
+%adding one coulumn to x
+J = 0;
+%intializing the value of J
+theta = zeros(2,1);
+%intializing theta
+J = sum((X*theta -y).^2)/2/m;
+end
